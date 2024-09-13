@@ -13,8 +13,7 @@ def index():
 
 @app.get("/menu/")
 def menu():
-    price = randint(15, 30)
-    return render_template("menu.html", price=price)
+    return render_template("menu.html")
 
 
 @app.get("/contacts/")
