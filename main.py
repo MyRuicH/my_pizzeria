@@ -1,6 +1,6 @@
 from flask import Flask, render_template
 
-from random import randint
+import random
 
 
 app = Flask(__name__)
@@ -8,12 +8,15 @@ app = Flask(__name__)
 
 @app.get("/")
 def index():
-    return render_template("index.html")
+    hour = random.randint(8, 11)
+    return render_template("index.html", hour=hour)
 
 
 @app.get("/menu/")
 def menu():
-    return render_template("menu.html")
+    price = random.randint(15, 31)
+    percent = random.randint(20, 61)
+    return render_template("menu.html", price=price, percent=percent)
 
 
 @app.get("/contacts/")
